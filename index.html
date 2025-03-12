@@ -3,15 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Library</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
-    <title>My Library</title>
 </head>
 <body>
-    <div class="main_container">
-        <div class="card">
-            
-        </div>
+    <h1>My Library</h1>
+
+    <!-- Form to add a new book -->
+    <div class="form_container">
+        <input type="text" id="title" placeholder="Book Title" required>
+        <input type="text" id="author" placeholder="Author" required>
+        <input type="number" id="pages" placeholder="Pages" required>
+        <input type="text" id="genre" placeholder="Genre" required>
+        <button onclick="handleAddBook()">Add Book</button>
     </div>
+
+    <!-- Container for book cards -->
+    <div class="main_container"></div>
 </body>
 </html>

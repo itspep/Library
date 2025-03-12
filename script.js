@@ -13,4 +13,5 @@ function Book(title, author, pages, genre) {
 function addBook(title, author, pages, genre) {
     const newBook = new Book(title, author, pages, genre);
     myLibrary.push(newBook);
+    displayBooks(); // Refresh display after adding a book
 }
