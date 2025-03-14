@@ -28,6 +28,11 @@
             <p><strong>Pages:</strong> <span class="book_pages"></span></p>
             <p><strong>Genre:</strong> <span class="book_genre"></span></p>
             <button class="remove_btn">Remove</button>
+
+            <!-- Updated card template (inside displayBooks function) -->
+<p><strong>Read Status:</strong> <span class="read_status">${book.read ? "Read" : "Not Read"}</span></p>
+<button onclick="toggleReadStatus('${book.id}')">Toggle Read Status</button>
+
         </div>
     </div>
 </body>

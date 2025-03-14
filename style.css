@@ -62,41 +62,77 @@ h1 {
 
 /* Book Card Styling */
 .card {
-    background-color: white;
+    background: linear-gradient(135deg, #ffffff, #f9f9f9);
     padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    width: 250px;
-    text-align: left;
-    transition: transform 0.2s;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 260px;
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 .card:hover {
-    transform: scale(1.05);
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
 }
 
 .card h2 {
-    margin: 0;
-    font-size: 1.5em;
+    font-size: 1.4em;
+    color: #333;
+    margin-bottom: 5px;
 }
 
 .card p {
-    margin: 5px 0;
     font-size: 1em;
+    color: #555;
+    margin: 3px 0;
 }
 
-/* Remove Button */
+/* Read Status Styling */
+.read_status {
+    font-weight: bold;
+    color: #007bff;
+}
+
+.card .status_read {
+    color: green;
+}
+
+.card .status_unread {
+    color: red;
+}
+
+/* Button Styling */
 .card button {
-    background-color: #ff4d4d;
-    color: white;
-    border: none;
     padding: 8px 12px;
-    cursor: pointer;
-    border-radius: 5px;
+    border-radius: 6px;
     font-size: 1em;
-    transition: 0.3s;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+    border: none;
+}
+
+.toggle_read_btn {
+    background-color: #28a745;
+    color: white;
+}
+
+.toggle_read_btn:hover {
+    background-color: #218838;
+}
+
+.remove_btn {
+    background-color: #dc3545;
+    color: white;
+}
+
+.remove_btn:hover {
+    background-color: #c82333;
 }
 
 .card button:hover {
-    background-color: #cc0000;
+    transform: scale(1.05);
 }

@@ -1,18 +1,19 @@
 // Array to store book objects
 const myLibrary = [];
 
-function Book(title, author, pages, genre) {
+function Book(title, author, pages, genre, read = false) {
     this.id = crypto.randomUUID(); // Generate unique ID
     this.title = title;
     this.author = author;
     this.pages = pages;
     this.genre = genre;
+    this.read = read; 
 }
 
 // Function to add a new book
 function addBook(title, author, pages, genre) {
     if (title && author && pages && genre) {
-        const newBook = new Book(title, author, pages, genre);
+        const newBook = new Book(title, author, pages, genre, false);
         myLibrary.push(newBook);
         displayBooks(); // Refresh book list
     } else {
@@ -50,6 +51,8 @@ function displayBooks() {
             <p><strong>Author:</strong> ${book.author}</p>
             <p><strong>Pages:</strong> ${book.pages}</p>
             <p><strong>Genre:</strong> ${book.genre}</p>
+            <p><strong>Read Status:</strong> <span class="read_status">${book.read ? "Read" : "Not Read"}</span></p>
+            <button onclick="toggleReadStatus('${book.id}')">Toggle Read Status</button>
             <button onclick="removeBook('${book.id}')">Remove</button>
         `;
 
@@ -63,5 +66,14 @@ function removeBook(bookId) {
     if (index !== -1) {
         myLibrary.splice(index, 1);
         displayBooks(); // Refresh book list after removal
+    }
+}
+
+// Function to toggle read status
+function toggleReadStatus(bookId) {
+    const book = myLibrary.find(book => book.id === bookId);
+    if (book) {
+        book.read = !book.read; // Toggle status
+        displayBooks(); // Refresh UI
     }
 }
